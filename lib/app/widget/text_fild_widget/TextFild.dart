@@ -1,4 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -6,13 +7,14 @@ class CustomTextField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final bool isEmail;
-
+  final TextEditingController controller;
   const CustomTextField({
     Key? key,
     required this.icon,
     required this.hintText,
     this.isPassword = false,
     this.isEmail = false,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -51,28 +53,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
   //   }
   // }
 
-  // String? _emailValidator(String? value) {
-  //   if (value == null || value.isEmpty) {
-  //     return 'Please enter your email';
-  //   } else if (!value.contains('@')) {
-  //     return 'Please enter a valid email address';
-  //   }
-  // }
-
-  // String? _passwordValidator(String? value) {
-  //   if (value == null || value.isEmpty) {
-  //     return 'Please enter your password';
-  //   } else if (!value.contains(RegExp(''))) {
-  //     return 'Password must contain letters';
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: TextFormField(
-        // controller: _emailController,
+        controller: widget.controller,
         // validator: _emailValidator,
         obscureText: widget.isPassword,
         keyboardType:
@@ -80,21 +66,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: InputDecoration(
           prefixIcon: Icon(
             widget.icon,
-            color: Color.fromARGB(255, 118, 177, 255),
+            color: const Color.fromARGB(255, 118, 177, 255),
           ),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderSide:
                 BorderSide(color: Colors.grey), // Updated to a default color
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide:
                 BorderSide(color: Colors.blue), // Updated to a default color
             borderRadius: BorderRadius.all(Radius.circular(35.0)),
           ),
-          contentPadding: EdgeInsets.all(10),
+          contentPadding: const EdgeInsets.all(10),
           hintText: widget.hintText,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
               fontSize: 14, color: Colors.grey), // Updated to a default color
         ),
       ),
