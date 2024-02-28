@@ -18,7 +18,6 @@ class Auth {
       );
     } on FirebaseAuthException catch (e) {
       print('Error registering: ${e.message}');
-      // Handle the error accordingly, e.g., show a dialog to the user
     } catch (e) {
       print('Error registering: $e');
       rethrow;

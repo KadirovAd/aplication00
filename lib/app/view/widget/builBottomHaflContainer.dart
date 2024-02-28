@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:aplication000/app/widget/serrver/auth_server.dart';
-import 'package:aplication000/main.dart';
 import 'package:flutter/material.dart';
 
 class BuilBottomHaflContainer extends StatefulWidget {
@@ -61,9 +60,10 @@ class _BuilBottomHaflContainerState extends State<BuilBottomHaflContainer> {
               ? InkWell(
                   onTap: () {
                     Auth().signInWithEmailAndPassword(
-                        widget.emailController.text,
-                        widget.passwodController.text,
-                        context);
+                      widget.emailController.text,
+                      widget.passwodController.text,
+                      context,
+                    );
                     Auth().registerWithEmailAndPassword(
                       widget.emailControllerReg.text,
                       widget.emailControllerReg.text,
