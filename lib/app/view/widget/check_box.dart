@@ -16,10 +16,10 @@ class ConteinerSigninSection extends StatefulWidget {
 }
 
 class _ConteinerSigninSectionState extends State<ConteinerSigninSection> {
+  bool isRememberMe = false; // Move this line outside the build method
+
   @override
   Widget build(BuildContext context) {
-    bool isRememberMe = false;
-
     return Container(
       margin: const EdgeInsets.only(top: 20),
       child: Column(

@@ -1,7 +1,8 @@
 import 'package:aplication000/app/widget/serrver/firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'app/view/HomePage.dart';
+import 'app/page/HomePage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,11 +24,3 @@ class App extends StatelessWidget {
   }
 }
 
-class AppText extends StatelessWidget {
-  const AppText({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
-  }
-}

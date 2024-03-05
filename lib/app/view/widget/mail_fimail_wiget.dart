@@ -79,7 +79,7 @@ class _BuildSignupSectionState extends State<BuildSignupSection> {
                       ),
                       const Text(
                         "Male",
-                        style: TextStyle(color: Palette.textColor1),
+                        style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                       ),
                     ],
                   ),

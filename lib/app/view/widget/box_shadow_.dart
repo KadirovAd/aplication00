@@ -59,26 +59,23 @@ class _BuilBottomHaflContainerState extends State<BuilBottomHaflContainer> {
           child: !widget.showShadow
               ? InkWell(
                   onTap: () {
-                    Auth().signInWithEmailAndPassword(
-                      widget.emailController.text,
-                      widget.passwodController.text,
-                      context,
-                    );
                     Auth().registerWithEmailAndPassword(
                       widget.emailControllerReg.text,
                       widget.emailControllerReg.text,
+                      widget.nameControllerReg.text,
                       context,
                     );
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.amber,
+                      color: Color.fromARGB(255, 112, 241, 196),
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(.3),
-                          spreadRadius: 1,
-                          blurRadius: 2,
+                          color: Color.fromARGB(255, 112, 241, 196)
+                              .withOpacity(.3),
+                          spreadRadius: 10,
+                          blurRadius: 10,
                           offset: const Offset(0, 1),
                         ),
                       ],
@@ -89,7 +86,32 @@ class _BuilBottomHaflContainerState extends State<BuilBottomHaflContainer> {
                     ),
                   ),
                 )
-              : null,
+              : InkWell(
+                  onTap: () {
+                    Auth().signInWithEmailAndPassword(
+                      widget.emailController.text,
+                      widget.passwodController.text,
+                      context,
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color:
+                              Color.fromARGB(255, 0, 255, 191).withOpacity(.3),
+                          spreadRadius: 20,
+                          blurRadius: 20,
+                          offset: const Offset(0, 1),
+                        ),
+                      ],
+                    ),
+                    child: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
         ),
       ),
     );
