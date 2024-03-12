@@ -1,10 +1,9 @@
 // import 'package:aplication000/app/constant/colors.dart';
 import 'package:aplication000/app/constant/colors.dart';
-import 'package:aplication000/app/view/widget/check_box.dart';
+import 'package:aplication000/app/view/box_shadow_.dart';
+import 'package:aplication000/app/view/check_box.dart';
+import 'package:aplication000/app/view/mail_fimail_wiget.dart';
 import 'package:flutter/material.dart';
-
-import '../view/widget/box_shadow_.dart';
-import '../view/widget/mail_fimail_wiget.dart';
 
 class LoginSignupScreen extends StatefulWidget {
   const LoginSignupScreen({super.key});
@@ -15,7 +14,6 @@ class LoginSignupScreen extends StatefulWidget {
 
 class _LoginSignupScreenState extends State<LoginSignupScreen> {
   bool isSignupScreen = true;
-  final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailControllerRegister =
       TextEditingController();
   final TextEditingController _passwordControllerRegister =
@@ -24,12 +22,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-//_scaffoldKey
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       backgroundColor: Palette.backgroundColor,
       body: Stack(
         children: [

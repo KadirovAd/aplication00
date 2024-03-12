@@ -1,13 +1,16 @@
-import 'package:aplication000/app/page/Second_page.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:aplication000/app/widget/serrver/UserModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:aplication000/app/widget/serrver/UserModel.dart';
+import 'package:flutter/material.dart';
+
+import '../../page/Second_page.dart';
 
 class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  // FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   Future<void> signInWithEmailAndPassword(
       String email, String password, BuildContext context) async {
     try {
@@ -17,7 +20,7 @@ class Auth {
       );
       User? user = userCredential.user;
       if (user != null) {
-        String userName = "";
+        String userName = "Some Name";
         String uid = user.uid;
         UserModel userModel = UserModel(
           name: userName,
@@ -27,26 +30,26 @@ class Auth {
         await _firestore.collection('users').doc(uid).set(userModel.toMap());
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('User signed in successfully!'),
+            content: Text('Пользователь успешно вошел в систему!'),
           ),
         );
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AppText1(
+            builder: (context) => UserModelText(
               name: userModel.name,
               email: userModel.email,
-              createdAt: userModel.createdAt,
+              createdAt: Timestamp.now().toDate(),
             ),
           ),
         );
       }
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error signing in: ${e.message}')),
+        SnackBar(content: Text('Ошибка входа: ${e.message}')),
       );
     } catch (e) {
-      print('Error signing in: $e');
+      print('Ошибка входа: $e');
       rethrow;
     }
   }
@@ -70,28 +73,27 @@ class Auth {
         await _firestore.collection('users').doc(uid).set(userModel.toMap());
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('User signed up successfully!'),
+            content: Text('Пользователь успешно зарегистрирован!'),
           ),
         );
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AppText1(
+            builder: (context) => UserModelText(
               name: userModel.name,
               email: userModel.email,
-              createdAt: userModel.createdAt,
+              createdAt: Timestamp.now().toDate(),
             ),
           ),
         );
       }
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error registering: ${e.message}')),
+        SnackBar(content: Text('Ошибка регистрации: ${e.message}')),
       );
     } catch (e) {
-      print('Error registering: $e');
+      print('Ошибка регистрации: $e');
       rethrow;
     }
   }
 }
-
