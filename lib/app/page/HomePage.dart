@@ -3,6 +3,7 @@ import 'package:aplication000/app/constant/colors.dart';
 import 'package:aplication000/app/view/box_shadow_.dart';
 import 'package:aplication000/app/view/check_box.dart';
 import 'package:aplication000/app/view/mail_fimail_wiget.dart';
+import 'package:aplication000/app/widget/serrver/auth_server.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignupScreen extends StatefulWidget {
@@ -20,8 +21,8 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       TextEditingController();
   final TextEditingController _userNameController = TextEditingController();
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailControllerLogIN = TextEditingController();
+  final TextEditingController passwordControllerLogIn = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -77,15 +78,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               ),
             ),
           ),
-          BuilBottomHaflContainer(
-            emailController: emailController,
-            emailControllerReg: _emailControllerRegister,
-            nameControllerReg: _userNameController,
-            passwodController: passwordController,
-            passwodControllerReg: _passwordControllerRegister,
-            showShadow: true,
-            top: isSignupScreen ? 535 : 430,
-          ),
+          // BuilBottomHaflContainer(
+          //   emailController: emailController,
+          //   emailControllerReg: _emailControllerRegister,
+          //   nameControllerReg: _userNameController,
+          //   passwodController: passwordController,
+          //   passwodControllerReg: _passwordControllerRegister,
+          //   showShadow: true,
+          //   top: isSignupScreen ? 535 : 430,
+          // ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 700),
             curve: Curves.bounceInOut,
@@ -93,7 +94,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 700),
               curve: Curves.bounceInOut,
-              height: isSignupScreen ? 380 : 250,
+              height: isSignupScreen ? 410 : 320,
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width - 40,
               margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -172,30 +173,20 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                         )
                       ],
                     ),
-                    if (isSignupScreen)
-                      BuildSignupSection(
-                        nameControllerReg: _userNameController,
-                        emailControllerReg: _emailControllerRegister,
-                        passwodControllerReg: _passwordControllerRegister,
-                      ),
-                    if (!isSignupScreen)
-                      ConteinerSigninSection(
-                        emailController: emailController,
-                        passwodController: passwordController,
-                      ),
+                    isSignupScreen
+                        ? BuildSignupSection(
+                            nameControllerReg: _userNameController,
+                            emailControllerReg: _emailControllerRegister,
+                            passwodControllerReg: _passwordControllerRegister,
+                          )
+                        : ConteinerSigninSection(
+                            emailController: emailControllerLogIN,
+                            passwodController: passwordControllerLogIn,
+                          ),
                   ],
                 ),
               ),
             ),
-          ),
-          BuilBottomHaflContainer(
-            emailController: emailController,
-            emailControllerReg: _emailControllerRegister,
-            nameControllerReg: _userNameController,
-            passwodController: passwordController,
-            passwodControllerReg: _passwordControllerRegister,
-            showShadow: false,
-            top: isSignupScreen ? 535 : 430,
           ),
         ],
       ),

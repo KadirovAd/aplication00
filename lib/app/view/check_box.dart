@@ -1,13 +1,14 @@
 import 'package:aplication000/app/constant/colors.dart';
+import 'package:aplication000/app/widget/serrver/auth_server.dart';
 import 'package:aplication000/app/widget/text_fild_widget/TextFild.dart';
 import 'package:flutter/material.dart';
 
 class ConteinerSigninSection extends StatefulWidget {
-  const ConteinerSigninSection(
-      {Key? key,
-      required this.emailController,
-      required this.passwodController})
-      : super(key: key);
+  const ConteinerSigninSection({
+    Key? key,
+    required this.emailController,
+    required this.passwodController,
+  }) : super(key: key);
   final TextEditingController emailController;
   final TextEditingController passwodController;
 
@@ -65,7 +66,25 @@ class _ConteinerSigninSectionState extends State<ConteinerSigninSection> {
                 ),
               )
             ],
-          )
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          TextButton(
+            style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Colors.orange)),
+            onPressed: () {
+              Auth().signInWithEmailAndPassword(
+                widget.emailController.text,
+                widget.passwodController.text,
+                context,
+              );
+            },
+            child: const Text(
+              'Sing in',
+              style: TextStyle(fontSize: 15, color: Colors.black),
+            ),
+          ),
         ],
       ),
     );

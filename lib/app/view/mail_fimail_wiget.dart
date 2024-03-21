@@ -1,15 +1,16 @@
 import 'package:aplication000/app/constant/colors.dart';
 import 'package:aplication000/app/constant/icons.dart';
+import 'package:aplication000/app/widget/serrver/auth_server.dart';
 import 'package:aplication000/app/widget/text_fild_widget/TextFild.dart';
 import 'package:flutter/material.dart';
 
 class BuildSignupSection extends StatefulWidget {
-  const BuildSignupSection(
-      {Key? key,
-      required this.emailControllerReg,
-      required this.passwodControllerReg,
-      required this.nameControllerReg})
-      : super(key: key);
+  const BuildSignupSection({
+    Key? key,
+    required this.emailControllerReg,
+    required this.passwodControllerReg,
+    required this.nameControllerReg,
+  }) : super(key: key);
 
   final TextEditingController emailControllerReg;
   final TextEditingController passwodControllerReg;
@@ -141,6 +142,25 @@ class _BuildSignupSectionState extends State<BuildSignupSection> {
                   ),
                 ],
               ),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          TextButton(
+            style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Colors.orange)),
+            onPressed: () {
+              Auth().registerWithEmailAndPassword(
+                widget.emailControllerReg.text,
+                widget.passwodControllerReg.text,
+                widget.nameControllerReg.text,
+                context,
+              );
+            },
+            child: const Text(
+              'Sing up',
+              style: TextStyle(fontSize: 15, color: Colors.black),
             ),
           ),
         ],
