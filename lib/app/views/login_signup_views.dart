@@ -1,4 +1,6 @@
 // import 'package:aplication000/app/constant/colors.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:aplication000/app/auth%20views/login_view.dart';
 import 'package:aplication000/app/auth%20views/register_view.dart';
 import 'package:aplication000/app/constant/colors/colors.dart';

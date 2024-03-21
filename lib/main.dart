@@ -1,7 +1,7 @@
 import 'package:aplication000/app/widget/serrver/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'app/views/home_view.dart';
+import 'app/views/login_signup_views.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
