@@ -1,11 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:aplication000/app/widget/serrver/UserModel.dart';
+import 'package:aplication000/app/models/user_models/UserModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../page/Second_page.dart';
+import '../../views/chat_view.dart';
 
 class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;

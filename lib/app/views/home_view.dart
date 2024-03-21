@@ -1,9 +1,7 @@
 // import 'package:aplication000/app/constant/colors.dart';
-import 'package:aplication000/app/constant/colors.dart';
-import 'package:aplication000/app/view/box_shadow_.dart';
-import 'package:aplication000/app/view/check_box.dart';
-import 'package:aplication000/app/view/mail_fimail_wiget.dart';
-import 'package:aplication000/app/widget/serrver/auth_server.dart';
+import 'package:aplication000/app/auth%20views/login_view.dart';
+import 'package:aplication000/app/auth%20views/register_view.dart';
+import 'package:aplication000/app/constant/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignupScreen extends StatefulWidget {
@@ -78,15 +76,6 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               ),
             ),
           ),
-          // BuilBottomHaflContainer(
-          //   emailController: emailController,
-          //   emailControllerReg: _emailControllerRegister,
-          //   nameControllerReg: _userNameController,
-          //   passwodController: passwordController,
-          //   passwodControllerReg: _passwordControllerRegister,
-          //   showShadow: true,
-          //   top: isSignupScreen ? 535 : 430,
-          // ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 700),
             curve: Curves.bounceInOut,

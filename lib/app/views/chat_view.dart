@@ -1,5 +1,4 @@
-import 'package:aplication000/app/view/drawer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:aplication000/app/widget/drawer_view/drawer_view.dart';
 import 'package:flutter/material.dart';
 
 class UserModelText extends StatefulWidget {
@@ -7,7 +6,8 @@ class UserModelText extends StatefulWidget {
   final String email;
   final DateTime createdAt;
 
-  UserModelText({
+  const UserModelText({
+    super.key,
     required this.name,
     required this.email,
     required this.createdAt,
@@ -34,7 +34,7 @@ class _UserModelTextState extends State<UserModelText> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('WhatsApp'),
+        title: const Text('WhatsApp'),
       ),
       drawer: DrawerWidget(
         userModel: UserModel(
@@ -57,23 +57,23 @@ class _UserModelTextState extends State<UserModelText> {
                     color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 1,
                     blurRadius: 5,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
               child: TextFormField(
                 controller: _messageController,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(
+                  contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
                     vertical: 14.0,
                   ),
                   suffixIcon: IconButton(
-                    icon: Icon(Icons.send),
+                    icon: const Icon(Icons.send),
                     onPressed: addMessage,
                   ),
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey),
+                  border: const OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.search, color: Colors.grey),
                 ),
               ),
             ),
@@ -86,18 +86,18 @@ class _UserModelTextState extends State<UserModelText> {
                 itemBuilder: (context, index) {
                   return Card(
                     elevation: 4,
-                    margin: EdgeInsets.symmetric(vertical: 8.0),
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
                         title: Text(
                           messages[index],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        leading: CircleAvatar(
+                        leading: const CircleAvatar(
                           backgroundColor: Colors.blue,
                           child: Icon(
                             Icons.person,

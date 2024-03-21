@@ -1,5 +1,5 @@
-import 'package:aplication000/app/constant/colors.dart';
-import 'package:aplication000/app/constant/icons.dart';
+import 'package:aplication000/app/constant/colors/colors.dart';
+import 'package:aplication000/app/constant/icons/icons.dart';
 import 'package:aplication000/app/widget/serrver/auth_server.dart';
 import 'package:aplication000/app/widget/text_fild_widget/TextFild.dart';
 import 'package:flutter/material.dart';

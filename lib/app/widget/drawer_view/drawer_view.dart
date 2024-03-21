@@ -14,7 +14,7 @@ class DrawerWidget extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -29,15 +29,15 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Name'),
+            title: const Text('Name'),
             subtitle: Text(userModel.name),
           ),
           ListTile(
-            title: Text('Email'),
+            title: const Text('Email'),
             subtitle: Text(userModel.email),
           ),
           ListTile(
-            title: Text('Time your WhatsApp'),
+            title: const Text('Time your WhatsApp'),
             subtitle: Text(userModel.createdAt.toString()),
           ),
         ],

@@ -1,14 +1,11 @@
 import 'package:aplication000/app/widget/serrver/firebase_options.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'app/page/HomePage.dart';
+import 'app/views/home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
   runApp(const App());
 }
 
@@ -23,4 +20,3 @@ class App extends StatelessWidget {
     );
   }
 }
-
