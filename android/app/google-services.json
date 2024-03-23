@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "863686671931",
+    "firebase_url": "https://fir-register-page-caa6f-default-rtdb.firebaseio.com",
+    "project_id": "fir-register-page-caa6f",
+    "storage_bucket": "fir-register-page-caa6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863686671931:android:5a81d17732a3dd2657e61e",
+        "android_client_info": {
+          "package_name": "com.example.faerbas_register_page"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863686671931-j652pjqbblujjov6rsbc7fg58eemu6g4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKqn_CBxLAxDMxOVMCJDaly64ajh7BR04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863686671931-j652pjqbblujjov6rsbc7fg58eemu6g4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "863686671931-a58pidi091h09vndjt0dv81451o6k947.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.faerbasRegisterPage.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863686671931:android:0ed74a4060f175ae57e61e",
+        "android_client_info": {
+          "package_name": "com.example.real_time_change"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863686671931-j652pjqbblujjov6rsbc7fg58eemu6g4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKqn_CBxLAxDMxOVMCJDaly64ajh7BR04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863686671931-j652pjqbblujjov6rsbc7fg58eemu6g4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "863686671931-a58pidi091h09vndjt0dv81451o6k947.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.faerbasRegisterPage.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
